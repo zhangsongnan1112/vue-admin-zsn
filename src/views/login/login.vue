@@ -1,10 +1,22 @@
 <template>
   <div class="login-container">
-
+1111111111111
   </div>
 </template>
 <script>
+import {loginApi} from '@/api/common'
 export default {
+  data () {
+    return {
+
+    }
+  },
+  created () {
+    loginApi().then(res => {
+      alert(111)
+      console.log(res)
+    })
+  }
 }
 </script>
 

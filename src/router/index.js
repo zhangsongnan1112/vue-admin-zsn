@@ -5,13 +5,13 @@ Vue.use(Router)
 
 const baseRouter = [
   {
-    path: '/',
+    path: '/login',
     name: 'index',
     component: () => import('@/components/HelloWorld'),
     hidden: true
   },
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: () => import('@/views/login/login'),
     hidden: true,
