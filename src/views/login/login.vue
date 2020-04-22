@@ -12,8 +12,7 @@ export default {
     }
   },
   created () {
-    loginApi().then(res => {
-      alert(111)
+    loginApi({user: '1318256345', pwd: '123'}).then(res => {
       console.log(res)
     })
   }
@@ -24,7 +23,7 @@ export default {
 .login-container {
   height: 100%;
   width: 100%;
-  background: url('~@/assets/img/bg.png');
+  background: url('~@/assets/imgs/bg.png');
   background-size: cover;
   overflow: hidden;
 }

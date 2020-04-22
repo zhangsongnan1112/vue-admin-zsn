@@ -5,14 +5,12 @@ const service = axios.create({
 })
 
 service.interceptors.request.use(config => {
-  alert('request')
   return config
 }, error => {
   console.log(error)
 })
 
 service.interceptors.response.use(response => {
-  alert('response')
 })
 
 export default service

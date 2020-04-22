@@ -2,7 +2,7 @@ import service from '@/utils/request.js'
 
 export function loginApi (params) {
   return service({
-    url: '/login',
+    url: '/apis/login',
     methods: 'get',
     params
   })

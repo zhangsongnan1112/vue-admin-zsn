@@ -1,0 +1,248 @@
+.db-env-checkbox /deep/ {
+    margin: 50px 0 34px 0;
+    .el-select .el-input .el-input__inner{
+        border:none;
+        color: #fff;
+    }
+    .el-scrollbar__wrap {
+        background: #2F4282!important;
+    }
+    // 柱条饼样式
+    .db-icon-box {
+        float: right;
+        margin:0;
+        display: flex;
+        justify-content: space-around;
+        li {
+            background:rgba(18,30,80,1);
+            list-style: none;
+            width:56px;
+            height:40px;
+            border-radius:4px;
+            margin-left:20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            span {
+                width:34px;
+                height: 33px;
+            }
+        }
+        @for $i from 1 through 3 {
+            li:nth-of-type(#{$i}) {
+                span {
+                    background: url('~@/assets/imgs/icon#{$i}.png') no-repeat;
+                    background-size: contain;
+                }
+                &.active {
+                    span {
+                        background: url('~@/assets/imgs/iconhover#{$i}.png') no-repeat;
+                        background-size: contain;
+                    }
+                }
+                &:hover {
+                    @extend .active;
+                }
+            }
+        }
+    }
+}
+// 筛选select 样式
+.db-checkbox-beauty {
+    width:240px;
+    height:42px;
+    margin-right: 20px;
+    border-radius:4px;
+    line-height: 40px;
+    display: flex;
+    background: #1F39A5;
+    box-sizing: border-box;
+    padding-left:10px;
+    span {
+        color:#fff;
+        font-size: 14px;
+        line-height: 44px;
+    }
+    .el-select {
+        border:none;
+        height: 38px;
+        width: 168px!important;
+        background: #1F39A5!important;;
+        border:1px solid #1F39A5!important;
+        /deep/.el-input{
+        background: #1F39A5!important;
+        .el-input__inner {
+        background: #1F39A5!important;
+        border:1px solid #1F39A5!important;
+        }
+        }
+        .el-scrollbar__wrap {
+        background: #1F39A5;
+        }
+    }
+}
+// 环境对标 一级表头样式
+.table-list1  /deep/  thead  tr:first-of-type th:first-of-type:before {
+    content: '指标';
+    text-align: center;
+    position: absolute;
+    width: 40px;
+    top: 6px;
+    left:100px;
+  }
+
+.table-list1  /deep/ thead tr:first-of-type th:first-of-type:after {
+    content: '区域';
+    text-align: center;
+    position: absolute;
+    width: 40px;
+    bottom: 4px;
+    left: 10px;
+  }
+
+.table-list1  /deep/ thead::after{
+   content: '';
+    position: absolute;
+    top: 44px;
+    left: 181px;
+    width: 191px;
+    height: 1px;
+    background-color: #2F4282;
+    display: block;
+    text-align: center;
+    -webkit-transform: rotate(-167deg);
+    transform: rotate(-167deg);
+    -ms-transform: rotate(-167deg);
+    -ms-transform-origin: top left;
+    -webkit-transform: rotate(-167deg);
+    -webkit-transform-origin: top left;
+}
+
+.table-list2  /deep/  thead.is-group  tr:first-of-type th:first-of-type:before {
+    content: '指标';
+    text-align: center;
+    position: absolute;
+    width: 150px;
+    top: 20px;
+    left: 20px;
+}
+
+.table-list2  /deep/ thead.is-group tr:first-of-type th:first-of-type:after {
+    content: '区域';
+    text-align: center;
+    position: absolute;
+    width: 150px;
+    bottom: 20px;
+    left: -30px;
+}
+
+.table-list2  /deep/ thead.is-group::after{
+    content: '';
+    position: absolute;
+    top: 142px;
+    left: 194px;
+    width: 239px;
+    height: 1px;
+    background-color: #2F4282;
+    display: block;
+    text-align: center;
+    transform: rotate(-144deg);
+    -ms-transform: rotate(-144deg);
+    -ms-transform-origin: top left;
+    -webkit-transform: rotate(-144deg);
+    -webkit-transform-origin: top left;
+}
+
+  // checkbox 样式
+.table-list /deep/  .header-checkbox{
+    display: inline-block;
+    width:18px;
+    height: 18px;
+    vertical-align:inhert;
+    border-radius: 1px;
+    margin-right: 6px;
+    cursor: pointer;
+    position: relative;
+    background-color: #2F4282;
+    border-color: #314080;
+    border-radius: 4px;
+
+}
+.table-list /deep/ .header-checkbox.checkbox-active{
+    background: url('~@/assets/imgs/checked.png') no-repeat;
+}
+
+
+.table-list /deep/ .el-table__body tr.hover-row>td {
+    background: #2dc2fb;
+}
+.table-list /deep/ .el-table {
+    border-color: #314080;
+    background: #314080;
+    &:before {
+        background-color:#314080;
+    }
+     &:after {
+        background-color:#314080;
+    }
+    tbody {
+        tr {
+            td {
+                background: #0D1333;
+                border-color: #314080;
+            }
+        }
+    }
+}
+.table-list /deep/ ::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+}
+.table-list /deep/ ::-webkit-scrollbar-thumb{
+    border-radius: 2px;
+    height: 50px;
+    background: rgba(32,57,163,1);
+}
+.table-list /deep/ ::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: #0D1333;
+}
+
+// 表格样式修改
+.table-list /deep/ .el-table thead.has-gutter th {
+    background: #0D1335;
+    color:#fff;
+}
+.table-list /deep/ .el-table tbody tr{
+    background: #0D1335;
+    color:#fff;
+}
+
+
+.table-list /deep/ .el-table thead.is-group th {
+    background: #0D1335;
+    color:#fff;
+}
+.table-list /deep/ .el-table tr{
+    background: #0D1335;
+    color:#fff;
+}
+
+.table-list /deep/ .el-checkbox__input.is-checked,
+.table-list /deep/ .el-checkbox__inner{
+    background-color: #2F4282;
+    border-color: #314080;
+}
+.table-list /deep/ .el-table--border th, .el-table__fixed-right-patch {
+    border-bottom: 1px solid #2F4282;
+    border-right: 1px solid #2F4282;
+}
+.table-list /deep/ .el-table__fixed:before{
+    background-color: #0D1335;  
+}
+
+.table-list1 /deep/ .el-table--enable-row-hover .el-table__body tr:hover>td{
+    background: #2dc2fb;
+}
+

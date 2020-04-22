@@ -5,19 +5,25 @@ Vue.use(Router)
 
 const baseRouter = [
   {
-    path: '/login',
+    path: '/hello',
     name: 'index',
     component: () => import('@/components/HelloWorld'),
     hidden: true
   },
   {
-    path: '/',
+    path: '/login',
     name: 'login',
     component: () => import('@/views/login/login'),
     hidden: true,
     meta: {
       title: '登录'
     }
+  },
+  {
+    path: '/',
+    name: 'benchmark',
+    component: () => import('@/views/benchmark/index'),
+    hidden: true
   }
 ]
 export default new Router({
