@@ -24,6 +24,19 @@ const baseRouter = [
     name: 'benchmark',
     component: () => import('@/views/benchmark/index'),
     hidden: true
+  },
+  {
+    path: '/user',
+    redirect: '/user/detail',
+    hidden: true,
+    children: [{
+      path: 'detail',
+      name: 'detail',
+      component: () => import('@/views/user/user'),
+      meta: {
+        title: '个人信息'
+      }
+    }]
   }
 ]
 export default new Router({

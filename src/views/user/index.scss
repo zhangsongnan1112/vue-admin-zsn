@@ -1,0 +1,56 @@
+$mainColor:#0464CB;
+.zs-personal {
+  margin:40px;
+}
+.zs-personal-component {
+  width:100%;
+  height: auto;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(215,221,228,1);
+  border-radius:4px;
+}
+.zs-focus-company {
+    .zs-focus-search {
+        padding-left:40px;
+        box-sizing: border-box;
+    }
+}
+.zs-focus-search-title {
+    font-size:16px;
+    margin: 40px 0 20px 0 ;
+    color:rgba(4,100,203,1);
+    font-weight:bold;
+    line-height:36px;
+    &:after {
+        content: '';
+        width: 19px;
+        height: 2px;
+        background:rgba(4,100,203,1);
+        border-radius: 1px;
+        display: block;
+    }
+    .zs-table-totle {
+        font-size:14px;
+        font-weight:500;
+        color:rgba(153,153,153,1);
+        line-height:36px;     
+        margin-left:26px;
+        i {
+            color: #E55C73;
+            font-style: normal;
+        }
+    }
+}
+
+// 个人中心
+.zs-user-detial {
+    width: 540px;
+    margin: 0 auto;
+    height: auto;
+    padding-bottom: 80px;
+}
+.zs-detail-btn {
+    margin: 0 auto!important;
+    display: block;
+    margin-bottom: 26px;
+}
