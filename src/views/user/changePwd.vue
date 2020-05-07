@@ -18,7 +18,7 @@
 </template>
 <script>
 import { changePassword } from '@/api/personalCenter'
-import { mapGetters } from 'vuex'
+// import { mapGetters } from 'vuex'
 export default {
   data () {
     const validatePass = (rule, value, callback) => {

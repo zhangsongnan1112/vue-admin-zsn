@@ -6,7 +6,10 @@ import router from './router'
 import ElementUI from 'element-ui'
 import '@/assets/sass/theme/index.css'
 import '@/assets/sass/util/reset.scss'
+// import './assets/icon/iconfont.js'
+// import './assets/icon/icon.css'
 // import '@/permission.js'
+import '@/assets/icon'
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

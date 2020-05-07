@@ -5,9 +5,9 @@ Vue.use(Router)
 
 const baseRouter = [
   {
-    path: '/hello',
+    path: '/',
     name: 'index',
-    component: () => import('@/components/HelloWorld'),
+    component: () => import('@/views/Layout/layout'),
     hidden: true
   },
   {
@@ -20,7 +20,7 @@ const baseRouter = [
     }
   },
   {
-    path: '/',
+    path: '/benchmark',
     name: 'benchmark',
     component: () => import('@/views/benchmark/index'),
     hidden: true
@@ -38,6 +38,7 @@ const baseRouter = [
       }
     }]
   }
+
 ]
 export default new Router({
   mode: 'history',
