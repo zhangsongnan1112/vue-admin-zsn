@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <el-form class="login-form" ref="loginForm"  :model="loginForm">
+    <el-form class="login-form" ref="loginForm"  :model="loginForm" :rules="loginRules">
 
       <div class="title-container" >
         <h3 class="title">Login Form</h3>
@@ -12,7 +12,7 @@
         </span>
         <el-input
           ref="username"
-          placeholder="username"
+          placeholder="Username"
           tabindex= '1'
           v-model="loginForm.username"
           />
@@ -26,9 +26,11 @@
         <el-input
           ref="password"
           :type="passwordType"
-          placeholder="password"
+          placeholder="Password"
           tabindex= '2'
           v-model="loginForm.password"
+          @keyup.native="checkCapslock"
+          @blur="capsTooltip = false"
           />
           <span class="show-pwd" @click="showPwd">
             <svg-icon :icon-class="passwordType === 'password' ? 'eye-close' : 'eye-open'" />
@@ -41,22 +43,64 @@
   </div>
 </template>
 <script>
+import { validataUsername } from '@/utils/validate'
 export default {
   name: 'Login',
   data () {
+    const validatorName = (rule, value, callback) => {
+      if (!validataUsername(value)) {
+        callback(new Error('Please enter the correct user name'))
+      } else {
+        callback()
+      }
+    }
+    const validatorPassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error('The password can not be less than 6 digits'))
+      } else {
+        callback()
+      }
+    }
     return {
+      loginRules: {
+        username: [{required: true, trigger: 'blur', validator: validatorName}],
+        password: [{required: true, trigger: 'blur', validator: validatorPassword}]
+      },
       loginForm: {
-        username: 'admin', // editor
-        password: '111111'
+        username: '', // editor
+        password: ''
       },
       passwordType: 'password',
       loading: false,
-      capsTooltip: false
+      capsTooltip: false,
+      redirect: ''
     }
   },
   methods: {
     showPwd () {
-
+      this.passwordType = this.passwordType === 'password' ? 'text' : 'password'
+      this.$nextTick(() => {
+        this.$refs.password.focus()
+      })
+    },
+    checkCapslock (e) {
+      const {key} = e
+      this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
+    }
+  },
+  watch: {
+    $route: {
+      handler (route) {
+        this.redirect = route.query.redirect
+      },
+      immediate: true
+    }
+  },
+  mounted () {
+    if (this.loginForm.username === '') {
+      this.$refs.username.focus()
+    } else {
+      this.$refs.password.focus()
     }
   }
 }
