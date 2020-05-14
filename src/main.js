@@ -9,6 +9,7 @@ import '@/styles/reset.scss'
 // import '@/permission.js'
 import '@/icon'
 Vue.use(ElementUI)
+process.env.MOCK && require('../mock')
 
 Vue.config.productionTip = false
 

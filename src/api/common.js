@@ -1,9 +1,9 @@
-import service from '@/utils/request.js'
+import request from '@/utils/request'
 
 export function loginApi (params) {
-  return service({
-    url: '/apis/login',
-    methods: 'get',
+  return request({
+    url: '/user/login',
+    method: 'post',
     params
   })
 }

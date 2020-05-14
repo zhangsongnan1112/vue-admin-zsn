@@ -38,12 +38,13 @@
       </el-form-item>
       </el-tooltip>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click="handleLogin">Login</el-button>
     </el-form>
   </div>
 </template>
 <script>
 import { validataUsername } from '@/utils/validate'
+import { loginApi } from '@/api/common'
 export default {
   name: 'Login',
   data () {
@@ -67,14 +68,16 @@ export default {
         password: [{required: true, trigger: 'blur', validator: validatorPassword}]
       },
       loginForm: {
-        username: '', // editor
-        password: ''
+        username: 'admin', // editor
+        password: '123456'
       },
       passwordType: 'password',
       loading: false,
       capsTooltip: false,
       redirect: ''
     }
+  },
+  created () {
   },
   methods: {
     showPwd () {
@@ -86,6 +89,13 @@ export default {
     checkCapslock (e) {
       const {key} = e
       this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
+    },
+    handleLogin () {
+      loginApi().then(res => {
+        if (res.data.code === 0) {
+          alert()
+        }
+      })
     }
   },
   watch: {
