@@ -8,7 +8,12 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/styles/reset.scss'
 // import '@/permission.js'
 import '@/icon'
+
+import loading from './utils/loading.js'
+Vue.use(loading)
+
 Vue.use(ElementUI)
+
 process.env.MOCK && require('../mock')
 
 Vue.config.productionTip = false

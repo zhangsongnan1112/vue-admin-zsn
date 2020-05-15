@@ -92,8 +92,8 @@ export default {
     },
     handleLogin () {
       loginApi().then(res => {
-        if (res.data.code === 0) {
-          alert()
+        if (res.code === 0) {
+          console.log(res)
         }
       })
     }

@@ -33,6 +33,7 @@ $titleColor:#0464CB;
 .zs-common-nav {
 display: flex;
  li {
+   border-radius:4px 4px 0px 0px;
     padding: 0 40px 0 16px;
     height:38px;
     background:#fff;
