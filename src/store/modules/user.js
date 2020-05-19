@@ -1,10 +1,11 @@
+import { loginApi } from '@/api/common'
 const state = {
   token: '',
   name: '',
   avattar: ''
 }
 
-const mutation = {
+const mutations = {
   SET_TOKEN: (state, token) => {
     state.token = token
   },
@@ -13,7 +14,25 @@ const mutation = {
   }
 }
 
+const actions = {
+  login ({commit}, userInfo) {
+    return new Promise((resolve, reject) => {
+      loginApi(userInfo).then(res => {
+        console.log(res, 111)
+        const {data} = res
+        commit('SET_TOKEN', data.token)
+        resolve()
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  }
+
+}
+
 export default {
+  namespaced: true,
   state,
-  mutation
+  mutations,
+  actions
 }

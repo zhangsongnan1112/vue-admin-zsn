@@ -10,7 +10,7 @@ export function loginApi (params) {
 
 export function myselfApi (params) {
   return request({
-    url: '/api/mode2/DataOne',
+    url: 'api/myself',
     method: 'get',
     params
   })

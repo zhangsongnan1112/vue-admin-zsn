@@ -7,7 +7,7 @@ const baseRouter = [
   {
     path: '/',
     name: 'index',
-    component: () => import('@/views/Layout/layout'),
+    component: () => import('@/Layout'),
     hidden: true
   },
   {

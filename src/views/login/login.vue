@@ -44,7 +44,6 @@
 </template>
 <script>
 import { validataUsername } from '@/utils/validate'
-// import { loginApi, myselfApi } from '@/api/common'
 export default {
   name: 'Login',
   data () {
@@ -91,16 +90,20 @@ export default {
       this.capsTooltip = key && key.length === 1 && (key >= 'A' && key <= 'Z')
     },
     handleLogin () {
-      // loginApi(this.loginForm).then(res => {
-      //   console.log(res)
-      // })
-      // myselfApi().then(res => {
-      //   console.log(res)
-      // })
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
           console.log(this.$store.getters.name)
+          this.$store.dispatch('user/login', this.loginForm)
+            .then(() => {
+              this.$router.push({path: '/'})
+              this.loading = false
+            })
+            .catch(() => {
+              this.loading = false
+            })
+        } else {
+          return false
         }
       })
     }
