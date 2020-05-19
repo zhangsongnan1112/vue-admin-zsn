@@ -8,13 +8,13 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/styles/reset.scss'
 // import '@/permission.js'
 import '@/icon'
-
 import loading from './utils/loading.js'
-Vue.use(loading)
+import store from './store'
 
 Vue.use(ElementUI)
+Vue.use(loading)
 
-process.env.MOCK && require('../mock')
+// process.env.MOCK && require('../mock')
 
 Vue.config.productionTip = false
 
@@ -22,6 +22,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
