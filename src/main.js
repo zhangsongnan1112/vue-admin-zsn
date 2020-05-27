@@ -6,7 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import '@/assets/theme/index.css' 自定义的主题
 import '@/styles/reset.scss'
-// import '@/permission.js'
+import '@/permission.js'
 import '@/icon'
 import loading from './utils/loading.js'
 import store from './store'

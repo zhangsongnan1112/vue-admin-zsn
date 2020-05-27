@@ -1,4 +1,5 @@
 import { loginApi } from '@/api/common'
+import {setToken} from '@/utils/auth'
 const state = {
   token: '',
   name: '',
@@ -21,6 +22,7 @@ const actions = {
         console.log(res, 111)
         const {data} = res
         commit('SET_TOKEN', data.token)
+        setToken(data.token)
         resolve()
       }).catch(error => {
         reject(error)
