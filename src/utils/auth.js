@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = 'zsn-Token'
+const TokenKey = 'zsn-admin'
 
 export function getToken () {
   return Cookies.get(TokenKey)

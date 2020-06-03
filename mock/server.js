@@ -7,14 +7,15 @@ let app = express()
 app.use('/api/myself', function (req, res) {
   res.json(Mock.mock({
     'code': 0,
-    'data|1-10': [{
+    'data': {
       'fullName': Random.cname(), // 随机生成中文人名
       'userId': Random.natural(0, 5),
       'mtime': Random.datetime(),
       'color': Random.color(),
-      'admin': Random.boolean(),
-      'ename': Random.first()
-    }],
+      'roles': 'admin',
+      'ename': Random.first(),
+      'avattar': Random.image()
+    },
     'msg': 'success'
   }))
 })
