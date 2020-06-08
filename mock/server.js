@@ -31,5 +31,5 @@ app.post('/api/user/login', function (req, res) {
 })
 
 app.listen('8888', () => {
-  console.log('8888')
+  console.log('项目在8888端口启动')
 })
