@@ -12,7 +12,7 @@ app.use('/api/myself', function (req, res) {
       'userId': Random.natural(0, 5),
       'mtime': Random.datetime(),
       'color': Random.color(),
-      'roles': 'admin',
+      'roles': ['edtior'],
       'ename': Random.first(),
       'avattar': Random.image()
     },

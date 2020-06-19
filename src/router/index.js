@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const baseRouter = [
+export const baseRoutes = [
   {
     path: '/',
     name: 'index',
@@ -20,27 +20,38 @@ const baseRouter = [
     }
   },
   {
+    path: '/404',
+    component: () => import('@/views/error-page/404'),
+    hidden: true
+  }
+]
+
+export const asyncRoutes = [
+  {
     path: '/benchmark',
     name: 'benchmark',
     component: () => import('@/views/benchmark/index'),
-    hidden: true
+    hidden: false,
+    meta: {
+      role: ['edtior', 'admin'],
+      title: '对标'
+    }
   },
   {
     path: '/user',
-    redirect: '/user/detail',
+    name: 'user',
+    // redirect: '/user/detail',
+    component: () => import('@/views/user/user'),
     hidden: true,
-    children: [{
-      path: 'detail',
-      name: 'detail',
-      component: () => import('@/views/user/user'),
-      meta: {
-        title: '个人信息'
-      }
-    }]
-  }
-
+    meta: {
+      role: ['admin'],
+      title: '个人中心'
+    }
+  },
+  // 404 must be at the end
+  { path: '*', redirect: '/404', hidden: true }
 ]
 export default new Router({
   mode: 'history',
-  routes: baseRouter
+  routes: baseRoutes
 })

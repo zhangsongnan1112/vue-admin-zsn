@@ -26,7 +26,6 @@ const actions = {
   login ({commit}, userInfo) {
     return new Promise((resolve, reject) => {
       loginApi(userInfo).then(res => {
-        console.log(res, 111)
         const {data} = res
         commit('SET_TOKEN', data.token)
         setToken(data.token)
