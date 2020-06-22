@@ -35,7 +35,19 @@ export const asyncRoutes = [
     meta: {
       role: ['edtior', 'admin'],
       title: '对标'
-    }
+    },
+    children: [
+      {
+        path: 'ben',
+        name: 'ben',
+        component: () => import('@/views/benchmark/index'),
+        hidden: false,
+        meta: {
+          role: ['edtior', 'admin'],
+          title: '对标111'
+        }
+      }
+    ]
   },
   {
     path: '/user',
@@ -52,6 +64,6 @@ export const asyncRoutes = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 export default new Router({
-  mode: 'history',
+  scrollBehavior: () => ({y: 0}),
   routes: baseRoutes
 })
