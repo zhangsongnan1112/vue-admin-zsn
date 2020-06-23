@@ -1,10 +1,13 @@
 <template>
   <div class="app-wrapper ">
     <Sidebar></Sidebar>
+    <div class="main-container">
+     <app-main />
+    </div>
   </div>
 </template>
 <script>
-import {Sidebar, TagsView} from './components'
+import {Sidebar, TagsView, AppMain} from './components'
 export default {
   data () {
     return {
@@ -13,7 +16,8 @@ export default {
   },
   components: {
     Sidebar,
-    TagsView
+    TagsView,
+    AppMain
   },
   methods: {
 

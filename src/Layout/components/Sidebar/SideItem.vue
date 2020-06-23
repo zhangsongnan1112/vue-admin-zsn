@@ -10,7 +10,7 @@
 
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
-        <item :icon="onlyOneChild.meta.icon" :title="onlyOneChild.meta.title" />
+        <item :icon="item.meta.icon" :title="item.meta.title" />
       </template>
       <sidebar-item
         v-for="child in item.children"

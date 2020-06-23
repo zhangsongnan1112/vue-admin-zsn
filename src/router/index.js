@@ -30,7 +30,7 @@ export const asyncRoutes = [
   {
     path: '/benchmark',
     name: 'benchmark',
-    component: () => import('@/views/benchmark/index'),
+    component: () => import('@/Layout'),
     hidden: false,
     meta: {
       role: ['edtior', 'admin'],
@@ -45,18 +45,18 @@ export const asyncRoutes = [
         hidden: false,
         meta: {
           role: ['edtior', 'admin'],
-          title: '对标111',
+          title: '对标',
           icon: 'el-icon-eleme'
         }
       },
       {
-        path: 'ben',
-        name: 'ben',
-        component: () => import('@/views/benchmark/index'),
+        path: 'user',
+        name: 'user',
+        component: () => import('@/views/user/user'),
         hidden: false,
         meta: {
           role: ['edtior', 'admin'],
-          title: '对标111',
+          title: '对标1',
           icon: 'el-icon-eleme'
         }
       }
