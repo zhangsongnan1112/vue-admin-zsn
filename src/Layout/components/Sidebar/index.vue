@@ -1,6 +1,7 @@
 <template>
   <div class="sidebar-container">
     <el-menu
+     :default-active="activeMenu"
       mode="vertical"
       :collapse="isCollapse"
       :background-color="variables.menuBg"
@@ -33,6 +34,14 @@ export default {
     ]),
     variables () {
       return variables
+    },
+    activeMenu () {
+      const route = this.$route
+      const {meta, path} = route
+      if (meta.activeMenu) {
+        return meta.activeMenu
+      }
+      return path
     }
   }
 }

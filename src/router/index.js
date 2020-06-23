@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Layout from '@/Layout'
+
 Vue.use(Router)
 
 export const baseRoutes = [
   {
     path: '/',
     name: 'index',
-    component: () => import('@/Layout'),
+    component: Layout,
     hidden: true
   },
   {
@@ -30,8 +32,7 @@ export const asyncRoutes = [
   {
     path: '/benchmark',
     name: 'benchmark',
-    component: () => import('@/Layout'),
-    hidden: false,
+    component: Layout,
     meta: {
       role: ['edtior', 'admin'],
       title: '对标',
@@ -42,7 +43,6 @@ export const asyncRoutes = [
         path: 'ben',
         name: 'ben',
         component: () => import('@/views/benchmark/index'),
-        hidden: false,
         meta: {
           role: ['edtior', 'admin'],
           title: '对标',
@@ -53,7 +53,6 @@ export const asyncRoutes = [
         path: 'user',
         name: 'user',
         component: () => import('@/views/user/user'),
-        hidden: false,
         meta: {
           role: ['edtior', 'admin'],
           title: '对标1',
