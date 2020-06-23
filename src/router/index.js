@@ -34,7 +34,8 @@ export const asyncRoutes = [
     hidden: false,
     meta: {
       role: ['edtior', 'admin'],
-      title: '对标'
+      title: '对标',
+      icon: 'el-icon-eleme'
     },
     children: [
       {
@@ -44,7 +45,19 @@ export const asyncRoutes = [
         hidden: false,
         meta: {
           role: ['edtior', 'admin'],
-          title: '对标111'
+          title: '对标111',
+          icon: 'el-icon-eleme'
+        }
+      },
+      {
+        path: 'ben',
+        name: 'ben',
+        component: () => import('@/views/benchmark/index'),
+        hidden: false,
+        meta: {
+          role: ['edtior', 'admin'],
+          title: '对标111',
+          icon: 'el-icon-eleme'
         }
       }
     ]
