@@ -11,10 +11,14 @@ import '@/icon'
 import loading from './utils/loading.js'
 import store from './store'
 
+import * as filters from '@/filters'
+
 Vue.use(ElementUI)
 Vue.use(loading)
 
-// process.env.MOCK && require('../mock')
+Object.keys(filters).forEach(item => {
+  Vue.filter(item, filters[item])
+})
 
 Vue.config.productionTip = false
 

@@ -26,7 +26,7 @@ export default {
     Sidebar
   },
   created () {
-    console.log(this.permission_routes)
+
   },
   computed: {
     ...mapGetters([

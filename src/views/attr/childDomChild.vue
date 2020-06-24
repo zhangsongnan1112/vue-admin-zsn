@@ -1,8 +1,10 @@
 <template>
   <div>
-   <p>coo:{{coo}}</p>
+   <p>coo:{{coo}}  </p>
    <p>foo:{{foo}}</p>
-   <button @click="startUpRocket">我要发射火箭</button>
+   <h1>{{child | seat}}</h1>
+   <el-input v-model="child" placeholder="请输入内容"></el-input>
+   <el-button @click="startUpRocket">我要发射火箭</el-button>
   </div>
 </template>
 <script>
@@ -11,7 +13,7 @@ export default {
   props: ['coo', 'foo'],
   data () {
     return {
-      child: '孙子'
+      child: ''
     }
   },
   methods: {

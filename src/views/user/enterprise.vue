@@ -199,7 +199,6 @@ export default {
     },
     // 模糊搜索
     async remoteAddCompany (query) {
-      console.log(query)
       if (query !== '') {
         const res = await fuzzyCompanyName({ key: query })
         if (res.code === 0) {
