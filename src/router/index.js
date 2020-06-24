@@ -66,11 +66,33 @@ export const asyncRoutes = [
     name: 'user',
     // redirect: '/user/detail',
     component: () => import('@/views/user/user'),
-    hidden: true,
     meta: {
-      role: ['admin'],
-      title: '个人中心'
+      role: ['edtior', 'admin'],
+      title: '个人中心',
+      icon: 'el-icon-eleme'
     }
+  },
+  {
+    path: '/attr',
+    name: '/attr',
+    component: Layout,
+    meta: {
+      title: 'attrs'
+    },
+    children: [
+
+      {
+        path: 'user',
+        name: 'user',
+        component: () => import('@/views/attr'),
+        meta: {
+          role: ['edtior', 'admin'],
+          title: '对标1',
+          icon: 'el-icon-eleme'
+        }
+      }
+
+    ]
   },
   // 404 must be at the end
   { path: '*', redirect: '/404', hidden: true }
