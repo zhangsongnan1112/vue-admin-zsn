@@ -27,7 +27,7 @@
 <script>
 import path from 'path'
 import { isExternal } from '@/utils/validate'
-import item from './item'
+import item from './Item'
 export default {
   name: 'SidebarItem',
   props: {

@@ -36,7 +36,7 @@ export const asyncRoutes = [
     meta: {
       role: ['edtior', 'admin'],
       title: '对标',
-      icon: 'el-icon-eleme'
+      icon: 'el-icon-setting'
     },
     children: [
       {
@@ -69,7 +69,7 @@ export const asyncRoutes = [
     meta: {
       role: ['edtior', 'admin'],
       title: '个人中心',
-      icon: 'el-icon-eleme'
+      icon: 'el-icon-user'
     }
   },
   {
