@@ -1,6 +1,6 @@
 <template>
   <div class="icon-btn">
-    <i :class='[isActive ? "el-icon-s-unfold": "el-icon-s-fold", "hamburger" ]' @click="toggleClick"></i>
+    <i :class='[isActive ? "el-icon-s-fold": "el-icon-s-unfold", "hamburger" ]' @click="toggleClick"></i>
   </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <btn @toggleClick="togglSideBar" :is-active="sidebar.opened"></btn>
+    <btn @toggleClick="togglSideBar" :is-active="Boolean(sidebar.opened)"></btn>
   </div>
 </template>
 <script>
