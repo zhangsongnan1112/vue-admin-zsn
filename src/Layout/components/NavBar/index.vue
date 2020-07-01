@@ -1,18 +1,24 @@
 <template>
   <div class="navbar">
-    <btn @toggleClick="togglSideBar"></btn>
+    <btn @toggleClick="togglSideBar" :is-active="sidebar.opened"></btn>
   </div>
 </template>
 <script>
 import btn from './ItemBtn'
+import {mapGetters} from 'vuex'
 export default {
   components: {
     btn
   },
   methods: {
     togglSideBar () {
-      alert()
+      this.$store.dispatch('app/toggleSideBar')
     }
+  },
+  computed: {
+    ...mapGetters([
+      'sidebar'
+    ])
   }
 }
 </script>

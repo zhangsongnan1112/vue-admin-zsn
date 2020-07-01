@@ -19,7 +19,6 @@ import Sidebar from './SideItem'
 export default {
   data () {
     return {
-      isCollapse: false
     }
   },
   components: {
@@ -30,7 +29,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'permission_routes'
+      'permission_routes',
+      'sidebar'
     ]),
     variables () {
       return variables
@@ -42,6 +42,9 @@ export default {
         return meta.activeMenu
       }
       return path
+    },
+    isCollapse () {
+      return !this.sidebar.opened
     }
   }
 }
