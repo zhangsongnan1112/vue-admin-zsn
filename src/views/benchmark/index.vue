@@ -46,7 +46,6 @@ export default {
   /* 换肤 */
   .db-wrap {
     color:#f2f2f2;
-    background: rgba(9,9,24,1);
     padding-top: 30px;
   }
   .db-wrap /deep/ .table-list .el-table__body{

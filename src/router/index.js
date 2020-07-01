@@ -36,7 +36,7 @@ export const asyncRoutes = [
     meta: {
       role: ['edtior', 'admin'],
       title: '对标',
-      icon: 'el-icon-setting'
+      icon: 'el-icon-s-flag'
     },
     children: [
       {
