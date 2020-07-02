@@ -2,16 +2,22 @@
   <div class="navbar">
     <btn @toggleClick="togglSideBar" :is-active="Boolean(sidebar.opened)" class="hamburger-container"></btn>
     <breadcrumb class="breadcrumb-container"></breadcrumb>
+    <div class="right-menu">
+
+      <screenfull class="right-menu-item"></screenfull>
+    </div>
   </div>
 </template>
 <script>
 import btn from './ItemBtn'
 import Breadcrumb from './Breadcrumb'
 import {mapGetters} from 'vuex'
+import screenfull from '@/components/screenfull'
 export default {
   components: {
     btn,
-    Breadcrumb
+    Breadcrumb,
+    screenfull
   },
   created () {
 
@@ -50,5 +56,21 @@ export default {
 }
 .breadcrumb-container {
   float: left;
+}
+.right-menu {
+  float: right;
+  height: 100%;
+  line-height: 50px;
+  .right-menu-item {
+    display: inline-block;
+    padding: 0 8px;
+    height: 100%;
+    font-size: 18px;
+    color: #5a5e66;
+    vertical-align: text-bottom;
+    &:hover {
+      background: rgba(0, 0, 0, .025)
+    }
+  }
 }
 </style>
