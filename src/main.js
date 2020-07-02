@@ -10,7 +10,7 @@ import '@/permission.js'
 import '@/icon'
 import loading from './utils/loading.js'
 import store from './store'
-
+import 'default-passive-events'
 import * as filters from '@/filters'
 
 Vue.use(ElementUI)

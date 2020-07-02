@@ -28,7 +28,7 @@ export default {
 .icon-btn {
   width:26px;
   height: 50px;;
-  padding-left:15px;
+  padding:0 15px;
   line-height: 50px;
 }
 .hamburger {

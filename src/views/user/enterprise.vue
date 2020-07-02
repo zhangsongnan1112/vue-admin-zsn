@@ -134,7 +134,7 @@ export default {
     }
   },
   created () {
-    this.getTableData()
+    // this.getTableData()
   },
   methods: {
     closedPop () {

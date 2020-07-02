@@ -7,12 +7,6 @@ Vue.use(Router)
 
 export const baseRoutes = [
   {
-    path: '/',
-    name: 'index',
-    component: Layout,
-    hidden: true
-  },
-  {
     path: '/login',
     name: 'login',
     component: () => import('@/views/login/login'),
@@ -30,57 +24,63 @@ export const baseRoutes = [
 
 export const asyncRoutes = [
   {
-    path: '/benchmark',
-    name: 'benchmark',
+    path: '/',
     component: Layout,
+    redirect: '/dashboard',
     meta: {
       role: ['edtior', 'admin'],
-      title: '对标',
-      icon: 'el-icon-s-flag'
+      title: 'Dashboard',
+      icon: 'el-icon-s-grid'
     },
     children: [
       {
-        path: 'ben',
-        name: 'ben',
+        path: 'dashboard',
+        name: 'Dashboard',
         component: () => import('@/views/benchmark/index'),
         meta: {
           role: ['edtior', 'admin'],
-          title: '对标',
-          icon: 'el-icon-eleme'
-        }
-      },
-      {
-        path: 'user',
-        name: 'user',
-        component: () => import('@/views/user/user'),
-        meta: {
-          role: ['edtior', 'admin'],
-          title: '对标1',
-          icon: 'el-icon-eleme'
+          title: 'Dashboard',
+          icon: 'el-icon-s-grid'
         }
       }
     ]
   },
   {
     path: '/user',
-    name: 'user',
-    // redirect: '/user/detail',
-    component: () => import('@/views/user/user'),
+    component: Layout,
+    redirect: '/user/personal',
     meta: {
-      role: ['edtior', 'admin'],
-      title: '个人中心',
-      icon: 'el-icon-user'
-    }
+      icon: 'el-icon-s-custom',
+      title: 'User'
+    },
+    children: [
+      {
+        path: 'personal',
+        name: 'Personal',
+        component: () => import('@/views/user/user'),
+        meta: {
+          role: ['edtior', 'admin'],
+          title: 'Personal',
+          icon: 'el-icon-s-custom'
+        }
+      },
+      {
+        path: 'personal1',
+        name: 'Personal1',
+        component: () => import('@/views/user/user'),
+        meta: {
+          role: ['edtior', 'admin'],
+          title: 'Personal1',
+          icon: 'el-icon-s-custom'
+        }
+      }
+    ]
   },
   {
     path: '/attr',
     name: '/attr',
     component: Layout,
-    meta: {
-      title: 'attrs'
-    },
     children: [
-
       {
         path: 'user',
         name: 'user',
@@ -88,7 +88,7 @@ export const asyncRoutes = [
         meta: {
           role: ['edtior', 'admin'],
           title: '对标1',
-          icon: 'el-icon-eleme'
+          icon: 'el-icon-s-flag'
         }
       }
 
