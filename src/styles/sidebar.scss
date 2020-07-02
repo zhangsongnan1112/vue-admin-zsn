@@ -84,3 +84,12 @@
   margin-left: $sideBarWidth;
   position: relative;
 }
+
+
+.el-scrollbar {
+  height: 100%;
+  
+}
+.scrollbar-wrapper {
+  overflow-x: hidden;
+}
