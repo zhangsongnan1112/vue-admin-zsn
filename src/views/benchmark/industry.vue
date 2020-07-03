@@ -13,7 +13,7 @@
       />
     </div>
     <select-form :form-data="formData" :active-calss="activeCalss" @changeChart="changeChartEmit"></select-form>
-    <div v-if="imgData && headerData" class="table-list table-list2">
+    <div v-if="imgData && headerData" class="table-list table-list2" id="exportExcel">
       <el-table
         :data="tableData"
         style="width: 100%"
@@ -44,14 +44,18 @@
         </el-table-column>
       </el-table>
     </div>
+
+    <el-button @click="downoad">111</el-button>
   </div>
 </template>
+
 <script>
 import { barHorChart, barCharts, pieCharts, popUp, selectForm } from './components'
 // import { getMarkApi, getHeaderApi } from '@/api/benchmark'
 // import { getRegionApi, getIndustryApi, getTimeApi } from '@/api/common'
 import { cityData } from './headerData'
 import {header, DataF} from './data'
+import downloadExcel from '@/utils/excel.js'
 export default {
   components: {
     barHorChart,
@@ -129,6 +133,9 @@ export default {
     // this.getHeaderList()
   },
   methods: {
+    downoad () {
+      downloadExcel('#exportExcel', '企业清单')
+    },
     setzhibiaoValue () {
       this.zhibiaoValue = new Array(34).fill(false)
       this.zhibiaoValue[0] = true
