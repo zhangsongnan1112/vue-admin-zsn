@@ -5,6 +5,7 @@
     <div class="right-menu">
       <search class="right-menu-item"></search>
       <screenfull class="right-menu-item  right-menu-item-hover"></screenfull>
+      <personal class="right-menu-item  right-menu-item-hover"></personal>
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 import btn from './ItemBtn'
 import Breadcrumb from './Breadcrumb'
 import Search from './Search'
+import Personal from './personal'
 import {mapGetters} from 'vuex'
 import screenfull from '@/components/screenfull'
 export default {
@@ -19,7 +21,8 @@ export default {
     btn,
     Breadcrumb,
     screenfull,
-    Search
+    Search,
+    Personal
   },
   created () {
 

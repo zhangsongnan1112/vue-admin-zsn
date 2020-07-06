@@ -3,7 +3,7 @@ import {setToken, getToken} from '@/utils/auth'
 const state = {
   token: getToken(),
   name: '',
-  avattar: '',
+  avattar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
   roles: ''
 }
 
