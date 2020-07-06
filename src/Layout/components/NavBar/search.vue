@@ -1,6 +1,6 @@
 <template>
   <div :class="{'show':show,'header-search':true}" >
-    <svg-icon class-name="search-icon" icon-class="search" @click="click" />
+    <svg-icon class-name="search-icon" icon-class="search" @click.stop="click" />
      <el-select
       ref="headerSearchSelect"
       v-model="value"
@@ -36,6 +36,15 @@ export default {
     console.log(this.generateRoutes(this.routes))
     this.init(this.generateRoutes(this.routes))
   },
+  watch: {
+    show (value) {
+      if (value) {
+        document.body.addEventListener('click', this.close)
+      } else {
+        document.body.removeEventListener('click', this.close)
+      }
+    }
+  },
   methods: {
     init (list) {
       this.fuse = new Fuse(list, {
@@ -56,9 +65,15 @@ export default {
     },
     click () {
       this.show = !this.show
+      this.options = []
       if (this.show) {
         this.$refs.headerSearchSelect.focus()
       }
+    },
+    close () {
+      this.$refs.headerSearchSelect && this.$refs.headerSearchSelect.blur()
+      this.options = []
+      this.show = false
     },
     generateRoutes (routes, baseUrl = '/', prefixTitle = []) {
       let res = []
