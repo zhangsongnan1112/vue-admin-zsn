@@ -27,11 +27,6 @@ export const asyncRoutes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    meta: {
-      role: ['edtior', 'admin'],
-      title: 'Dashboard',
-      icon: 'el-icon-s-grid'
-    },
     children: [
       {
         path: 'dashboard',

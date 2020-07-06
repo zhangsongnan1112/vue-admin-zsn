@@ -38,15 +38,13 @@
             :label="it.name"
             :prop="it.code"
             align="center"
-            :render-header="renderHeader"
           >
+            <!-- :render-header="renderHeader" -->
           </el-table-column>
         </el-table-column>
       </el-table>
     </div>
-
-    <el-button @click="downoad">111</el-button>
-  </div>
+    <el-button @click="downoad">111</el-button>  </div>
 </template>
 
 <script>

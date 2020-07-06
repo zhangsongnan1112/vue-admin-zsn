@@ -3,21 +3,23 @@
     <btn @toggleClick="togglSideBar" :is-active="Boolean(sidebar.opened)" class="hamburger-container"></btn>
     <breadcrumb class="breadcrumb-container"></breadcrumb>
     <div class="right-menu">
-
-      <screenfull class="right-menu-item"></screenfull>
+      <search class="right-menu-item"></search>
+      <screenfull class="right-menu-item  right-menu-item-hover"></screenfull>
     </div>
   </div>
 </template>
 <script>
 import btn from './ItemBtn'
 import Breadcrumb from './Breadcrumb'
+import Search from './Search'
 import {mapGetters} from 'vuex'
 import screenfull from '@/components/screenfull'
 export default {
   components: {
     btn,
     Breadcrumb,
-    screenfull
+    screenfull,
+    Search
   },
   created () {
 
@@ -68,6 +70,8 @@ export default {
     font-size: 18px;
     color: #5a5e66;
     vertical-align: text-bottom;
+  }
+  .right-menu-item-hover {
     &:hover {
       background: rgba(0, 0, 0, .025)
     }
