@@ -4,9 +4,13 @@ $menuBg:#304156;
 $menuText: #bfcbd9;
 $menuActiveText:#409EFF;
 
+
+$theme: #1890ff;
+
 :export {
   sideBarWidth: $sideBarWidth;
   menuBg :$menuBg;
   menuText: $menuText;
-  menuActiveText: $menuActiveText
+  menuActiveText: $menuActiveText;
+  theme: #1890ff
 }

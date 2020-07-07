@@ -4,12 +4,17 @@
     <div class="main-container">
       <NavBar/>
      <app-main />
+
+     <RightPanel v-if="showSettings">
+        <Settings />
+     </RightPanel>
     </div>
   </div>
 </template>
 <script>
 import {mapState} from 'vuex'
-import {Sidebar, TagsView, AppMain, NavBar} from './components'
+import {Sidebar, TagsView, AppMain, NavBar, Settings} from './components'
+import RightPanel from '@/components/RightPanel'
 export default {
   name: 'Layout',
   data () {
@@ -21,11 +26,14 @@ export default {
     NavBar,
     Sidebar,
     TagsView,
-    AppMain
+    AppMain,
+    RightPanel,
+    Settings
   },
   computed: {
     ...mapState({
-      sidebar: state => state.app.sidebar
+      sidebar: state => state.app.sidebar,
+      showSettings: state => state.settings.showSettings
     }),
     classObj () {
       return {
