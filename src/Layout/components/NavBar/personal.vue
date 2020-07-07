@@ -3,7 +3,7 @@
     <el-dropdown>
       <span class="el-dropdown-link">
         <img :src="avattar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-        <span class="name">{{name}}</span>
+        <span class="name">{{name}} {{this.$store.state.app.sidebar.opened }} {{typeof (this.$store.state.app.sidebar.opened)  }}</span>
         <i class="el-icon-caret-bottom" />
       </span>
       <el-dropdown-menu slot="dropdown">

@@ -2,7 +2,7 @@ import Cookies from 'js-cookie'
 
 const state = {
   sidebar: {
-    opened: Cookies.get('sidebarStatus') ? Cookies.get('sidebarStatus') : true
+    opened: Cookies.get('sidebarStatus') !== '' ? !!+Cookies.get('sidebarStatus') : 2
   }
 }
 
@@ -10,9 +10,9 @@ const mutations = {
   TOGGLE_SIDEBAR: state => {
     state.sidebar.opened = !state.sidebar.opened
     if (state.sidebar.opened) {
-      Cookies.set('sidebarStatus', true)
+      Cookies.set('sidebarStatus', 1)
     } else {
-      Cookies.set('sidebarStatus', false)
+      Cookies.set('sidebarStatus', 0)
     }
   }
 }
