@@ -3,8 +3,7 @@
     <h1 class="zs-focus-search-title">修改密码</h1>
     <el-form ref="passwordParams" :model="passwordParams" :label-position="'right'" :rules="resetPwdRules" label-width="110px">
       <el-form-item label="账户名:">
-        <!-- <span>{{ name }}</span> -->
-        <span>111</span>
+        <span>{{ name }}</span>
       </el-form-item>
       <el-form-item label="旧密码:" prop="oldPassword">
         <el-input v-model="passwordParams.oldPassword" type="password" style="width:400px" autocomplete="new-password"></el-input>
@@ -18,7 +17,7 @@
 </template>
 <script>
 import { changePassword } from '@/api/personalCenter'
-// import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
   data () {
     const validatePass = (rule, value, callback) => {
@@ -55,9 +54,9 @@ export default {
     }
   },
   computed: {
-    // ...mapGetters([
-    //   'name'
-    // ])
+    ...mapGetters([
+      'name'
+    ])
   },
   methods: {
     // async logout() {

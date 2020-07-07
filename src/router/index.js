@@ -43,30 +43,16 @@ export const asyncRoutes = [
   {
     path: '/user',
     component: Layout,
-    redirect: '/user/personal',
-    meta: {
-      icon: 'el-icon-s-custom',
-      title: 'User'
-    },
+    redirect: '/user/detail',
+    hidden: true,
     children: [
       {
-        path: 'personal',
-        name: 'Personal',
+        path: 'detail',
+        name: 'detail',
         component: () => import('@/views/user/user'),
         meta: {
           role: ['edtior', 'admin'],
-          title: 'Personal',
-          icon: 'el-icon-s-custom'
-        }
-      },
-      {
-        path: 'personal1',
-        name: 'Personal1',
-        component: () => import('@/views/user/user'),
-        meta: {
-          role: ['edtior', 'admin'],
-          title: 'Personal1',
-          icon: 'el-icon-s-custom'
+          title: 'User-Personal'
         }
       }
     ]

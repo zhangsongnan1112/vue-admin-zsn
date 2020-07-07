@@ -3,7 +3,7 @@
     <h1 class="zs-focus-search-title">修改个人信息</h1>
     <el-form ref="userDetail" :model="userDetail" :label-position="'right'" label-width="110px" :rules="resetInforules">
       <el-form-item label="账户名:"><span>{{ fromData.name }}</span></el-form-item>
-      <el-form-item label="所属公司:"><span>{{ fromData.group.name }}</span></el-form-item>
+      <el-form-item label="所属公司:"><span>{{ fromData.company }}</span></el-form-item>
       <el-form-item label="账户余额:"><span>{{ fromData.balance }}</span></el-form-item>
       <el-form-item label="会员到期时间:"><span>{{ fromData.expirationAt === null? '永久': fromData.expirationAt }}</span></el-form-item>
       <el-form-item label="联系电话:" prop="phone">
@@ -17,16 +17,19 @@
   </div>
 </template>
 <script>
-import { getUserDetail, changeUserDetail, changeParams } from '@/api/personalCenter'
+// import { getUserDetail, changeUserDetail, changeParams } from '@/api/personalCenter'
 export default {
   data () {
     return {
       userDetail: {
-        phone: '',
-        email: ''
+        phone: '13182563456',
+        email: '123@126.com'
       },
       fromData: {
-        group: {}
+        name: 'zhangsongnan',
+        company: 'BT',
+        balance: '10000',
+        expirationAt: null
       },
       resetInforules: {
         phone: [
@@ -53,13 +56,13 @@ export default {
   },
   methods: {
     getUserDetail () {
-      getUserDetail().then(res => {
-        if (res.code === 0) {
-          this.fromData = res.data
-          this.userDetail.phone = res.data.phone
-          this.userDetail.email = res.data.email
-        }
-      })
+    //   getUserDetail().then(res => {
+    //     if (res.code === 0) {
+    //       this.fromData = res.data
+    //       this.userDetail.phone = res.data.phone
+    //       this.userDetail.email = res.data.email
+    //     }
+    //   })
     },
     validatorParam (rule, value, callback, params) {
       const msg = params === 'phone' ? '联系电话' : '邮箱地址'
@@ -76,15 +79,15 @@ export default {
     },
     checkParam (param, callback) {
       if (this.fromData[param] !== this.userDetail[param]) {
-        changeParams({ type: param, key: this.userDetail[param], id: this.fromData.id }).then(res => {
-          if (res.data.have === 0) {
-            this.disabled = false
-            callback()
-          } else {
-            const msg = param === 'phone' ? '该手机号已经被注册过了' : '该邮箱已经被注册过了'
-            return callback(new Error(msg))
-          }
-        })
+        // changeParams({ type: param, key: this.userDetail[param], id: this.fromData.id }).then(res => {
+        //   if (res.data.have === 0) {
+        //     this.disabled = false
+        //     callback()
+        //   } else {
+        //     const msg = param === 'phone' ? '该手机号已经被注册过了' : '该邮箱已经被注册过了'
+        //     return callback(new Error(msg))
+        //   }
+        // })
       } else {
         callback()
       }
@@ -93,12 +96,12 @@ export default {
       if (this.fromData.phone !== this.userDetail.phone || this.fromData.email !== this.userDetail.email) {
         this.$refs.userDetail.validate((valid) => {
           if (valid) {
-            changeUserDetail(this.userDetail).then(res => {
-              if (res.code === 0) {
-                this.$message.success('个人信息修改成功')
-                this.getUserDetail()
-              }
-            })
+            // changeUserDetail(this.userDetail).then(res => {
+            //   if (res.code === 0) {
+            //     this.$message.success('个人信息修改成功')
+            //     this.getUserDetail()
+            //   }
+            // })
           }
         })
       }

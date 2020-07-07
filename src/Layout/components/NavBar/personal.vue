@@ -6,11 +6,12 @@
           <i class="el-icon-caret-bottom" />
       </span>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>黄金糕</el-dropdown-item>
-        <el-dropdown-item>狮子头</el-dropdown-item>
-        <el-dropdown-item>螺蛳粉</el-dropdown-item>
-        <el-dropdown-item disabled>双皮奶</el-dropdown-item>
-        <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
+        <a v-for="(item,i) in personalItem" :key="i" :href="'/#/user/detail?item='+item">
+          <el-dropdown-item>{{ item }}</el-dropdown-item>
+        </a>
+        <el-dropdown-item divided>
+          <span style="display:block;" >退出登录</span>
+        </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -18,6 +19,11 @@
 <script>
 import {mapGetters} from 'vuex'
 export default {
+  data () {
+    return {
+      personalItem: ['关注企业', '修改密码', '个人信息']
+    }
+  },
   computed: {
     ...mapGetters([
       'avattar'
