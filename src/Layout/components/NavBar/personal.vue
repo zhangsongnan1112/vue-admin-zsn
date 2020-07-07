@@ -3,7 +3,8 @@
     <el-dropdown>
       <span class="el-dropdown-link">
         <img :src="avattar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
+        <span class="name">{{name}}</span>
+        <i class="el-icon-caret-bottom" />
       </span>
       <el-dropdown-menu slot="dropdown">
         <a v-for="(item,i) in personalItem" :key="i" :href="'/#/user/detail?item='+item">
@@ -26,6 +27,7 @@ export default {
   },
   computed: {
     ...mapGetters([
+      'name',
       'avattar'
     ])
   }
@@ -36,6 +38,19 @@ export default {
   margin-right: 30px;
   .el-dropdown {
     padding-top: 5px;
+    box-sizing: border-box;
+  }
+  .el-dropdown-link {
+    height: 45px;
+    display: inline-block;
+    box-sizing: border-box;
+    .name{
+      display: inline-block;
+      vertical-align: top;
+      font-size: 16px;;
+      margin-left:6px;
+      font-weight: bold;
+    }
   }
   .el-icon-caret-bottom {
     cursor: pointer;
