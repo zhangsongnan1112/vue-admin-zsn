@@ -1,5 +1,6 @@
 <template>
   <div class="sidebar-container">
+    <div class="has-login" v-if="showLogo && !isCollapse">个人系统</div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
       :default-active="activeMenu"
@@ -30,6 +31,9 @@ export default {
 
   },
   computed: {
+    showLogo () {
+      return this.$store.state.settings.sidebarLogo
+    },
     ...mapGetters([
       'permission_routes',
       'sidebar'
@@ -51,3 +55,15 @@ export default {
   }
 }
 </script>
+<style>
+.has-login {
+  width:100%;
+  height: 60px;
+  background: #000;
+  color: #fff;
+  line-height: 60px;;
+  font-size: 20px;
+  text-align: center;
+  font-weight: normal;
+}
+</style>

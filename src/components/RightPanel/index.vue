@@ -1,6 +1,6 @@
 <template>
   <div :class="drawer? 'showSettings':''">
-    <div class="handle-button"  @click="drawer=!drawer" >
+    <div class="handle-button"  @click="drawer=!drawer" :style="{'background-color':theme}" >
       <i :class="drawer?'el-icon-close':'el-icon-setting'" />
     </div>
     <el-drawer
@@ -19,6 +19,11 @@ export default {
   data () {
     return {
       drawer: false
+    }
+  },
+  computed: {
+    theme () {
+      return this.$store.state.settings.theme
     }
   }
 }
@@ -39,7 +44,6 @@ export default {
   cursor: pointer;
   color: #fff;
   line-height: 48px;
-  background: fuchsia;
   i {
     font-size: 24px;
     line-height: 48px;

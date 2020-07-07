@@ -4,7 +4,13 @@
       <h3 class="drawer-title">Page style setting</h3>
       <div class="drawer-item">
         <span>Theme Color</span>
-          <!-- <theme-picker style="float: right;height: 26px;margin: -3px 8px 0 0;" @change="themeChange" /> -->
+          <el-color-picker
+            v-model="defaultcolor"
+            class="drawer-switch"
+            size="mini"
+            :predefine="['#409EFF', '#1890ff', '#304156','#212121','#11a983', '#13c2c2', '#6959CD', '#f5222d', ]"
+            @change="changeColor"
+          ></el-color-picker>
       </div>
 
       <div class="drawer-item">
@@ -27,6 +33,11 @@
 </template>
 <script>
 export default {
+  data () {
+    return {
+      defaultcolor: this.$store.state.settings.theme
+    }
+  },
   computed: {
     fixedHeader: {
       get () {
@@ -63,7 +74,7 @@ export default {
     }
   },
   methods: {
-    themeChange (val) {
+    changeColor (val) {
       this.$store.dispatch('settings/changeSetting', {
         key: 'theme',
         value: val
@@ -89,7 +100,7 @@ export default {
   .drawer-item {
     color: rgba(0, 0, 0, .65);
     font-size: 14px;
-    padding: 12px 0;
+    padding: 18px 0;
   }
 
   .drawer-switch {
