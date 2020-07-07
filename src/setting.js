@@ -1,7 +1,7 @@
 module.exports = {
   title: 'ZSN Element Admin',
   // 右侧设置
-  showSettins: true,
+  showSettings: true,
 
   tagsView: true,
   fixedHeader: false,
