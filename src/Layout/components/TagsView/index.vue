@@ -35,6 +35,7 @@ export default {
   },
   mounted () {
     this.initTags()
+    this.addTags()
   },
   methods: {
     isActive (route) {
@@ -71,7 +72,6 @@ export default {
           this.$store.dispatch('tagsView/addVisitedView', item)
         }
       }
-      console.log(this.visitedViews)
     },
     addTags () {
       const { name } = this.$route
@@ -88,7 +88,6 @@ export default {
       })
     },
     toLastView (visitedViews, view) {
-      console.log(visitedViews)
       const latestView = visitedViews.slice(-1)[0]
       if (latestView) {
         this.$router.push(latestView.fullPath)
