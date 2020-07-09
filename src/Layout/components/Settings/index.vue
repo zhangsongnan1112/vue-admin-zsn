@@ -4,13 +4,14 @@
       <h3 class="drawer-title">Page style setting</h3>
       <div class="drawer-item">
         <span>Theme Color</span>
-          <el-color-picker
+          <!-- <el-color-picker
             v-model="defaultcolor"
             class="drawer-switch"
             size="mini"
             :predefine="['#409EFF', '#1890ff', '#304156','#212121','#11a983', '#13c2c2', '#6959CD', '#f5222d', ]"
             @change="changeColor"
-          ></el-color-picker>
+          ></el-color-picker> -->
+          <theme-picker style="float: right;height: 26px;margin: -3px 8px 0 0;" @change="changeColor" />
       </div>
 
       <div class="drawer-item">
@@ -32,7 +33,11 @@
   </div>
 </template>
 <script>
+import ThemePicker from '@/components/ThemePicker'
 export default {
+  components: {
+    ThemePicker
+  },
   data () {
     return {
       defaultcolor: this.$store.state.settings.theme
