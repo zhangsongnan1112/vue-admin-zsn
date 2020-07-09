@@ -35,7 +35,8 @@ export const asyncRoutes = [
         meta: {
           role: ['edtior', 'admin'],
           title: 'Dashboard',
-          icon: 'el-icon-s-grid'
+          icon: 'el-icon-s-grid',
+          affix: true
         }
       }
     ]
