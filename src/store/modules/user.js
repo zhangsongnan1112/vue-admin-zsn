@@ -36,16 +36,16 @@ const actions = {
     })
   },
   getInfo ({commit}) {
-    return new Promise((resolve, reject) => {
-      myselfApi().then(res => {
-        const {data} = res
-        commit('SET_NAME', data.fullName)
-        commit('SET_ROLES', data.roles)
-        resolve(data)
-      }).catch((error) => {
-        reject(error)
-      })
-    })
+    // return new Promise((resolve, reject) => {
+    //   myselfApi().then(res => {
+    //     const {data} = res
+    //     commit('SET_NAME', data.fullName)
+    //     commit('SET_ROLES', data.roles)
+    //     resolve(data)
+    //   }).catch((error) => {
+    //     reject(error)
+    //   })
+    // })
   }
 
 }
