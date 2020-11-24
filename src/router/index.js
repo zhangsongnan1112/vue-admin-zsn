@@ -30,11 +30,29 @@ export const asyncRoutes = [
     children: [
       {
         path: 'dashboard',
-        name: 'Dashboard',
+        name: '首页',
+        component: () => import('@/views/dashboard/index'),
+        meta: {
+          role: ['edtior', 'admin'],
+          title: '首页',
+          icon: 'el-icon-s-grid',
+          affix: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/charts',
+    children: [
+      {
+        path: 'charts',
+        name: '图表',
         component: () => import('@/views/benchmark/index'),
         meta: {
           role: ['edtior', 'admin'],
-          title: 'Dashboard',
+          title: '图表',
           icon: 'el-icon-s-grid',
           affix: true
         }

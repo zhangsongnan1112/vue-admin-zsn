@@ -44,7 +44,7 @@ export default {
     option () {
       const tip = this.legend
       return {
-        backgroundColor: '#0F1235',
+        backgroundColor: '#fff',
         tooltip: {
           trigger: 'axis',
           axisPointer: { // 坐标轴指示器，坐标轴触发有效
