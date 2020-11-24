@@ -25,6 +25,10 @@ const mutations = {
 const actions = {
   login ({commit}, userInfo) {
     return new Promise((resolve, reject) => {
+      // commit('SET_TOKEN', 'data.token')
+      // setToken('data.token')
+      // resolve()
+      debugger
       loginApi(userInfo).then(res => {
         const {data} = res
         commit('SET_TOKEN', data.token)
@@ -36,16 +40,16 @@ const actions = {
     })
   },
   getInfo ({commit}) {
-    // return new Promise((resolve, reject) => {
-    //   myselfApi().then(res => {
-    //     const {data} = res
-    //     commit('SET_NAME', data.fullName)
-    //     commit('SET_ROLES', data.roles)
-    //     resolve(data)
-    //   }).catch((error) => {
-    //     reject(error)
-    //   })
-    // })
+    return new Promise((resolve, reject) => {
+      myselfApi().then(res => {
+        const {data} = res
+        commit('SET_NAME', data.fullName)
+        commit('SET_ROLES', data.roles)
+        resolve(data)
+      }).catch((error) => {
+        reject(error)
+      })
+    })
   }
 
 }

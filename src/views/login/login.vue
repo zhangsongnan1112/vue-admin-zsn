@@ -93,7 +93,6 @@ export default {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
-          console.log(this.$store.getters.name)
           this.$store.dispatch('user/login', this.loginForm)
             .then(() => {
               this.$router.push({path: '/'})
