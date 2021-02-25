@@ -42,7 +42,7 @@ export const asyncRoutes = [
     ]
   },
   {
-    path: '/charts',
+    path: '/chart',
     component: Layout,
     redirect: '/charts/charts',
     children: [

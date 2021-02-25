@@ -1,6 +1,6 @@
-import {
-  // loginApi,
-  myselfApi } from '@/api/common'
+// import {
+//   // loginApi,
+//   myselfApi } from '@/api/common'
 import {setToken, getToken} from '@/utils/auth'
 const state = {
   token: getToken(),

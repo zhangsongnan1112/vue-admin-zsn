@@ -12,7 +12,7 @@ router.beforeEach(async (to, from, next) => {
     if (to.path === '/login') {
       next({path: '/'})
     } else {
-      const hasUserInfo = store.getters.name      
+      const hasUserInfo = store.getters.name
       if (hasUserInfo) {
         // has user info
         next()
