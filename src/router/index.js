@@ -80,6 +80,7 @@ export const asyncRoutes = [
     path: '/attr',
     name: '/attr',
     component: Layout,
+    redirect: '/attr/user',
     children: [
       {
         path: 'user',

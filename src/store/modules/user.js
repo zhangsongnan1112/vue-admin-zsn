@@ -1,4 +1,6 @@
-import { loginApi, myselfApi } from '@/api/common'
+import {
+  // loginApi,
+  myselfApi } from '@/api/common'
 import {setToken, getToken} from '@/utils/auth'
 const state = {
   token: getToken(),
@@ -25,18 +27,17 @@ const mutations = {
 const actions = {
   login ({commit}, userInfo) {
     return new Promise((resolve, reject) => {
-      // commit('SET_TOKEN', 'data.token')
-      // setToken('data.token')
-      // resolve()
-      debugger
-      loginApi(userInfo).then(res => {
-        const {data} = res
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
-        resolve()
-      }).catch(error => {
-        reject(error)
-      })
+      commit('SET_TOKEN', 'data.token')
+      setToken('data.token')
+      resolve()
+      // loginApi(userInfo).then(res => {
+      //   const {data} = res
+      //   commit('SET_TOKEN', data.token)
+      //   setToken(data.token)
+      //   resolve()
+      // }).catch(error => {
+      //   reject(error)
+      // })
     })
   },
   getInfo ({commit}) {
