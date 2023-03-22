@@ -12,6 +12,7 @@ import loading from './utils/loading.js'
 import store from './store'
 import 'default-passive-events'
 import * as filters from '@/filters'
+import './utils/bus'
 
 Vue.use(ElementUI)
 Vue.use(loading)

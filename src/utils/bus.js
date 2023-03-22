@@ -1,7 +1,7 @@
-import vue from 'vue'
+import Vue from 'vue'
 
-const bus = new vue()
+const bus = new Vue()
 
-vue.prototype.$eventBus = bus
+Vue.prototype.$eventBus = bus
 
 export default bus

@@ -1,53 +1,41 @@
 <template>
-  <div>
-    <el-date-picker
-      v-model="searchWeek"
-      type="week"
-      format="yyyy 第 WW 周"
-      placeholder="选择周"
-    >
-    </el-date-picker>
+  <div class="dashboard-container">
+    <div class="dashboard-item">
+      <h2>练习 eventBus</h2>
+      <child1></child1>
+      <child2></child2>
+    </div>
+    <div class="dashboard-item"></div>
+    <div class="dashboard-item"></div>
+    <div class="dashboard-item"></div>
   </div>
 </template>
 
 <script>
+import child1 from './components/child1.vue'
+import child2 from './components/child2.vue'
 export default {
   name: 'dashboard',
-  data() {
-    return {
-      obj: {
-        a: 'a'
-      },
-      searchWeek: '',
-      weekDateOption: {
-        firstDayOfWeek: 1,
-        disabledDate(time) {
-          const startTime = new Date('2019-12-30').getTime()
-          const today = new Date()
-          const d = today.getDay()
-          let w = 0
-          if (d === 0) {
-            w = 7
-          } else {
-            w = d
-          }
-          const endTime = today.setDate(today.getDate() - w)
-          return time.getTime() > endTime || time.getTime() < startTime
-        }
-      }
-    }
+  components: {
+    child1,
+    child2
   },
-  methods: {
-    change() {
-      this.obj.a = 1
-      console.log(this.obj)
-    },
-    change1() {
-      // this.obj.b = 2
-      console.log(this.obj)
-    }
-  }
+  data() {
+    return {}
+  },
+  methods: {}
 }
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .dashboard-item {
+    width: 33%;
+    height: 300px;
+    border: 2px solid red;
+  }
+}
+</style>
