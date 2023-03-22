@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- {{ obj }}
-    <button @click="change">11</button>
-    <el-button @click="change1">11</el-button> -->
     <el-date-picker
       v-model="searchWeek"
       type="week"

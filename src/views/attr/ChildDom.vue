@@ -1,14 +1,18 @@
 <template>
-   <div>
-      <p>foo:{{$attrs.foo}}</p>
-      <childDomChild v-bind="$attrs" v-on="$listeners"></childDomChild>
-   </div>
+  <div>
+    <h3>子组件</h3>
+    <p>foo:{{ $attrs.foo }} {{ $attrs }}</p>
+    <br />
+    <childDomChild v-bind="$attrs" v-on="$listeners"></childDomChild>
+  </div>
 </template>
 <script>
 import childDomChild from './childDomChild'
 export default {
   name: 'child-dom',
-  components: {childDomChild}
-
+  components: { childDomChild },
+  props: {
+    coo: String
+  }
 }
 </script>
