@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>$attrs $listeners 练习</h2>
+    childName: {{ childName }}
     <child-dom :foo="foo" :coo="coo" @commit="recive"> </child-dom>
   </div>
 </template>
@@ -9,14 +10,15 @@ import childDom from './ChildDom.vue'
 export default {
   data() {
     return {
-      foo: 'Hello, world',
-      coo: 'Hello,rui'
+      foo: 'FOO',
+      coo: 'COO',
+      childName: ''
     }
   },
   components: { childDom },
   methods: {
-    recive(v) {
-      alert('我是孙子组建过来的')
+    recive(value) {
+      this.childName = value
     }
   }
 }

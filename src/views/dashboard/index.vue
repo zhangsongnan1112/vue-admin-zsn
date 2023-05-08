@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-item">
-      <h2>练习 eventBus</h2>
+      <h2>练习 eventBus $on $emit</h2>
       <child1></child1>
       <child2></child2>
     </div>

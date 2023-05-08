@@ -11,7 +11,7 @@ export default {
   name: 'childDomChild',
   data() {
     return {
-      child: 'child'
+      child: '我是孙子组件字段'
     }
   },
   methods: {

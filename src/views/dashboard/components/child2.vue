@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ title }}组件 $emit 抛出</h2>
+    <h2>组件 $emit 抛出: {{ title }}</h2>
     <el-button @click="handleclick">child2 $emit</el-button>
   </div>
 </template>

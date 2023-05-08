@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{ title }} 组件 $on 监听</h2>
+    <h2>组件 $on 监听 : {{ title }}</h2>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 
   mounted() {
     this.$eventBus.$on('getTarget', target => {
-      console.log(target, 'target')
+      this.title = target
     })
   }
 }
