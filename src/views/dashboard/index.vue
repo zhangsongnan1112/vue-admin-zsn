@@ -5,20 +5,28 @@
       <child1></child1>
       <child2></child2>
     </div>
-    <div class="dashboard-item"></div>
-    <div class="dashboard-item"></div>
+    <div class="dashboard-item">
+      <study-model></study-model>
+    </div>
+    <div class="dashboard-item">
+      <study-render></study-render>
+    </div>
     <div class="dashboard-item"></div>
   </div>
 </template>
 
 <script>
-import child1 from './components/child1.vue'
-import child2 from './components/child2.vue'
+import child1 from './study-event-bus/child1.vue'
+import child2 from './study-event-bus/child2.vue'
+import studyModel from './study-model/index.vue'
+import studyRender from './study-render'
 export default {
   name: 'dashboard',
   components: {
     child1,
-    child2
+    child2,
+    studyModel,
+    studyRender
   },
   data() {
     return {}
