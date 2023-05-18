@@ -13,7 +13,9 @@ import store from './store'
 import 'default-passive-events'
 import * as filters from '@/filters'
 import './utils/bus'
+import VueCompositionAPI from '@vue/composition-api'
 
+Vue.use(VueCompositionAPI)
 Vue.use(ElementUI)
 Vue.use(loading)
 

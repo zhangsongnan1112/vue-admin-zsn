@@ -95,6 +95,25 @@ export const asyncRoutes = [
 
     ]
   },
+  {
+    path: '/target-monitor',
+    name: 'target-monitor',
+    component: Layout,
+    redirect: '/target-monitor/index',
+    children: [
+      {
+        path: 'index',
+        name: 'target-monitor-index',
+        component: () => import('@/views/target-monitor'),
+        meta: {
+          role: ['edtior', 'admin'],
+          title: '监视器',
+          icon: 'el-icon-s-flag'
+        }
+      }
+
+    ]
+  },
   // 404 must be at the end
   { path: '*', redirect: '/404', hidden: true }
 ]

@@ -20,10 +20,10 @@ const loading = {
 
 export default {
   install () {
-    Vue.$loading = loading
+    // Vue.$loading = loading
     Vue.mixin({
       created () {
-        this.$loading = Vue.$loading
+        this.$loading = loading
       }
     })
   }
